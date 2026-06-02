@@ -6,7 +6,6 @@ public class QuizAgrinho {
         Scanner scanner = new Scanner(System.in);
         int pontuacao = 0;
 
-        // Banco de perguntas, alternativas e respostas corretas
         String[] perguntas = {
             "1. Qual o principal objetivo do Agrinho?\n(A) Vender sementes\n(B) Promover a sustentabilidade e educação\n(C) Criar jogos",
             "2. O que é o plantio direto?\n(A) Plantar sem preparar o solo\n(B) Plantar sobre a palha da colheita anterior, evitando erosão\n(C) Usar tratores voadores",
@@ -21,22 +20,22 @@ public class QuizAgrinho {
         };
 
         char[] respostasCorretas = {'B', 'B', 'A', 'B', 'B', 'B', 'A', 'B', 'B', 'A'};
-
+        
         String[] dicas = {
             "Dica: O conhecimento transforma o campo e a cidade!",
-            "Dica O plantio direto protege o solo contra a chuva e o vento.",
-            "Dica: O trigo ajuda a manter o solo ativo e protegido nos meses frios.",
-            "Dica: Variar as plantas enriquece os nutrientes da terra naturalmente.",
-            "Dica: A irrigação gota a gota economiza até 50% de água!",
-            "Dica: Joaninhas, por exemplo, são ótimas para combater pulgões naturalmente.",
-            "Dica: O sol e a biomassa geram energia limpa para as fazendas.",
-            "Dica: A reciclagem correta evita a contaminação do solo e da água.",
-            "Dica: Usar drones e GPS ajuda a poupar recursos e proteger a natureza.",
-            "Dica: Sustentabilidade significa produzir hoje garantindo o amanhã!"
+            "Dica: O plantio direto protege o solo contra a chuva e o vento, ideal para o trigo.",
+            "Dica: O trigo ajuda a manter o solo ativo e protegido nos meses mais frios do ano.",
+            "Dica: Variar as plantas enriquece os nutrientes da terra de forma 100% natural.",
+            "Dica: Sistemas de irrigação inteligente economizam recursos hídricos preciosos.",
+            "Dica: Insetos benéficos ajudam a combater pragas sem agredir o meio ambiente.",
+            "Dica: O sol e a biomassa geram energia limpa e renovável para as fazendas.",
+            "Dica: A devolução correta de embalagens evita a contaminação do solo e dos rios.",
+            "Dica: Sensores e drones ajudam a aplicar insumos apenas onde é realmente necessário.",
+            "Dica: Sustentabilidade real significa produzir hoje garantindo os recursos de amanhã!"
         };
 
         System.out.println("==================================================");
-        System.out.println("  BEM-VINDO AO QUIZ AGRINHO: AGRO FORTE e SUSTENTÁVEL  ");
+        System.out.println("  BEM-VINDO AO QUIZ AGRINHO: AGRO FORTE E SUSTENTÁVEL  ");
         System.out.println("==================================================\n");
 
         for (int i = 0; i < perguntas.length; i++) {
@@ -55,16 +54,8 @@ public class QuizAgrinho {
         }
 
         System.out.println("==================================================");
-        System.out.println("FIM DO QUIZ!");
-        System.out.println("Sua pontuação final foi: " + pontuacao + " de 10 pontos.");
-        
-        if (pontuacao >= 7) {
-            System.out.println("Parabéns! Você é um verdadeiro Guardião do Agro Sustentável! 🌾");
-        } else {
-            System.out.println("Muito bem por tentar! Continue estudando para proteger nosso futuro. 🌱");
-        }
+        System.out.println("FIM DO QUIZ! Pontuação: " + pontuacao + "/10 pontos.");
         System.out.println("==================================================");
-        
         scanner.close();
     }
 }
