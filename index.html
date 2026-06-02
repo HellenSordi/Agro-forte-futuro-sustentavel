@@ -1,1 +1,202 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho: Agro Forte, Futuro Sustentável</title>
+    
+    <style>
+        /* Configurações Gerais */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9f4;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #2e7d32; /* Verde Agro */
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        /* Menu de Navegação */
+        nav {
+            background-color: #1b5e20;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #81c784;
+            color: #1b5e20;
+            border-radius: 4px;
+        }
+
+        /* Conteúdo Principal */
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: #2e7d32;
+            border-bottom: 2px solid #a5d6a7;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Cards dos Pilares */
+        .cards-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 250px;
+            background-color: #e8f5e9;
+            padding: 1rem;
+            border-left: 5px solid #4caf50;
+            border-radius: 4px;
+        }
+
+        /* Botão e Interatividade */
+        button {
+            background-color: #ff9800; /* Laranja para destaque */
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #e65100;
+        }
+
+        #texto-dica {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #fff3e0;
+            border: 1px solid #ffe0b2;
+            border-radius: 4px;
+            font-weight: 500;
+            display: none; /* Escondido no início */
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #3e2723; /* Tom marrom terra */
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Agrinho 2026</h1>
+        <p>Agro Forte, Futuro Sustentável</p>
+    </header>
+
+    <nav>
+        <a href="#sobre">Sobre o Tema</a>
+        <a href="#pilares">Pilares Sustentáveis</a>
+        <a href="#interacao">Quiz do Agrinho</a>
+    </nav>
+
+    <main>
+        <section id="sobre">
+            <h2>O Campo e a Sustentabilidade</h2>
+            <p>O lema <strong>"Agro Forte, Futuro Sustentável"</strong> nos convida a refletir sobre como a tecnologia, a preservação ambiental e a produção de alimentos caminham juntas. O campo não é apenas o lugar de onde vem nosso alimento, mas também o guardião da biodiversidade e dos recursos naturais.</p>
+        </section>
+
+        <section id="pilares">
+            <h2>Práticas para um Futuro Sustentável</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Preservação da Água</h3>
+                    <p>Uso de irrigação gota a gota e proteção de nascentes para evitar o desperdício.</p>
+                </div>
+                <div class="card">
+                    <h3>Tecnologia no Campo</h3>
+                    <p>Drones e sensores ajudam a aplicar insumos apenas onde é realmente necessário.</p>
+                </div>
+                <div class="card">
+                    <h3>Energia Limpa</h3>
+                    <p>Crescimento do uso de energia solar e biomassa nas propriedades rurais.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="interacao">
+            <h2>Desafio do Agrinho</h2>
+            <p>Descubra se você sabe como proteger o nosso futuro! Clique no botão abaixo para receber uma dica sustentável.</p>
+            <button id="btn-dica">Gerar Dica Sustentável</button>
+            <p id="texto-dica"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Projeto Agrinho - Desenvolvido com foco no Futuro do Planeta.</p>
+    </footer>
+
+    <script>
+        // Lista de dicas sustentáveis para o agro
+        const dicas = [
+            "Análise do Solo: Fazer análises regulares evita o uso desnecessário de fertilizantes, economizando recursos.",
+            "Agricultura de Precisão: O uso de drones reduz o desperdício de insumos, aplicando-os apenas onde o cultivo precisa.",
+            "Mata Ciliar: Preservar as árvores ao redor de rios e lagos evita o assoreamento e protege as fontes de água limpa.",
+            "Rotação de Culturas: Alternar as plantas na lavoura quebra o ciclo de pragas e melhora naturalmente a saúde da terra.",
+            "Energia Solar Fotovoltaica: Usar o sol para bombear água e iluminar a fazenda reduz drasticamente as emissões de carbono."
+        ];
+
+        // Selecionando os elementos
+        const botao = document.getElementById('btn-dica');
+        const paragrafoDica = document.getElementById('texto-dica');
+
+        // Lógica do clique
+        botao.addEventListener('click', function() {
+            // Sorteia uma dica
+            const indiceAleatorio = Math.floor(Math.random() * dicas.length);
+            
+            // Atualiza o texto e exibe na tela
+            paragrafoDica.textContent = dicas[indiceAleatorio];
+            paragrafoDica.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
+
