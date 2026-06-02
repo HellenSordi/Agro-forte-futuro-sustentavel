@@ -1,20 +1,4 @@
 
-#!/bin/bash
-
-echo "=================================================="
-echo " Iniciando a unificação do Projeto Agrinho 2026   "
-echo "=================================================="
-
-# 1. COMANDOS GIT: Criando a estrutura de pastas e inicializando o repositório
-echo "-> Configurando o Git e as pastas do projeto..."
-git init agrinho-sustentavel
-cd agrinho-sustentavel
-mkdir -p src/main/java
-mkdir -p web/css
-
-# 2. CÓDIGO JAVA: Criando o arquivo do Quiz com as 10 perguntas e dicas
-echo "-> Gerando o arquivo Java (Quiz + Dicas)..."
-cat << 'EOF' > src/main/java/QuizAgrinho.java
 import java.util.Scanner;
 
 public class QuizAgrinho {
@@ -22,13 +6,14 @@ public class QuizAgrinho {
         Scanner scanner = new Scanner(System.in);
         int pontuacao = 0;
 
+        // Banco de perguntas, alternativas e respostas corretas
         String[] perguntas = {
             "1. Qual o principal objetivo do Agrinho?\n(A) Vender sementes\n(B) Promover a sustentabilidade e educação\n(C) Criar jogos",
             "2. O que é o plantio direto?\n(A) Plantar sem preparar o solo\n(B) Plantar sobre a palha da colheita anterior, evitando erosão\n(C) Usar tratores voadores",
             "3. O trigo é considerado uma cultura de qual estação?\n(A) Inverno\n(B) Verão\n(C) Primavera",
             "4. Qual a importância da rotação de culturas?\n(A) Deixar a fazenda mais bonita\n(B) Quebrar o ciclo de pragas e melhorar o solo\n(C) Gastar mais água",
             "5. Economizar água na irrigação é uma prática de:\n(A) Desperdício\n(B) Sustentabilidade\n(C) Falta de dinheiro",
-            "6. O que são defensivos biológicos?\n(A) Produtos químicos pesados\n(B) Organismos vivos ou naturais para combaten pragas\n(C) Adubos artificiais",
+            "6. O que são defensivos biológicos?\n(A) Produtos químicos pesados\n(B) Organismos vivos ou naturais para combater pragas\n(C) Adubos artificiais",
             "7. Qual dessas é uma fonte de energia limpa no agro?\n(A) Painéis Solares\n(B) Geradores a Diesel\n(C) Carvão Mineral",
             "8. O que fazer com as embalagens vazias de defensivos agrícolas?\n(A) Queimar no campo\n(B) Lavar (tríplice lavagem) e devolver nos postos de coleta\n(C) Jogar no rio",
             "9. A agricultura de precisão usa tecnologia para:\n(A) Evitar o trabalho humano\n(B) Aplicar insumos na quantidade exata, reduzindo desperdício\n(C) Aumentar o preço dos alimentos",
@@ -36,9 +21,10 @@ public class QuizAgrinho {
         };
 
         char[] respostasCorretas = {'B', 'B', 'A', 'B', 'B', 'B', 'A', 'B', 'B', 'A'};
+
         String[] dicas = {
             "Dica: O conhecimento transforma o campo e a cidade!",
-            "Dica: O plantio direto protege o solo contra a chuva e o vento.",
+            "Dica O plantio direto protege o solo contra a chuva e o vento.",
             "Dica: O trigo ajuda a manter o solo ativo e protegido nos meses frios.",
             "Dica: Variar as plantas enriquece os nutrientes da terra naturalmente.",
             "Dica: A irrigação gota a gota economiza até 50% de água!",
@@ -59,88 +45,26 @@ public class QuizAgrinho {
             char resposta = scanner.next().toUpperCase().charAt(0);
 
             if (resposta == respostasCorretas[i]) {
-                System.out.println("\nCORRETO! 🎉\n" + dicas[i]);
+                System.out.println("\nCORRETO! 🎉");
+                System.out.println(dicas[i]);
                 pontuacao++;
             } else {
-                System.out.println("\nERRADO. ❌ A resposta correta era " + respostasCorretas[i]);
+                System.out.println("\nERRADO. ❌ A resposta correta era a alternativa " + respostasCorretas[i]);
             }
             System.out.println("--------------------------------------------------\n");
         }
 
-        System.out.println("FIM! Pontuação final: " + pontuacao + "/10. Obrigado por proteger o nosso futuro! 🌱");
+        System.out.println("==================================================");
+        System.out.println("FIM DO QUIZ!");
+        System.out.println("Sua pontuação final foi: " + pontuacao + " de 10 pontos.");
+        
+        if (pontuacao >= 7) {
+            System.out.println("Parabéns! Você é um verdadeiro Guardião do Agro Sustentável! 🌾");
+        } else {
+            System.out.println("Muito bem por tentar! Continue estudando para proteger nosso futuro. 🌱");
+        }
+        System.out.println("==================================================");
+        
         scanner.close();
     }
 }
-EOF
-
-# 3. CÓDIGO CSS: Criando a estilização visual com fundo de plantação de trigo
-echo "-> Gerando o arquivo de estilo CSS..."
-cat << 'EOF' > web/css/style.css
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    /* Fundo temático: Plantação de trigo */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                      url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1920&q=80');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.quiz-container {
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    padding: 30px;
-    max-width: 600px;
-    width: 90%;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border-top: 8px solid #2e7d32; /* Verde sustentável */
-}
-
-h1 { color: #2e7d32; text-align: center; }
-h3 { color: #f57c00; text-align: center; font-weight: 400; }
-
-.btn-alternativa {
-    background-color: #f1f8e9;
-    border: 2px solid #c5e1a5;
-    color: #33691e;
-    padding: 12px;
-    margin: 8px 0;
-    width: 100%;
-    text-align: left;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.btn-alternativa:hover {
-    background-color: #dcedc8;
-    transform: translateY(-2px);
-}
-
-.dica-box {
-    background-color: #e8f5e9;
-    border-left: 5px solid #4caf50;
-    padding: 12px;
-    margin-top: 15px;
-    border-radius: 4px;
-    font-style: italic;
-}
-EOF
-
-# 4. FINALIZAÇÃO DO GIT: Salvando tudo na linha do tempo do Git
-echo "-> Salvando o projeto completo no Git..."
-git add .
-git commit -m "feat: Projeto unificado Agrinho (Estrutura Git, Logica Java e Estilo CSS)"
-
-echo "=================================================="
-echo " PROJETO CRIADO COM SUCESSO!                      "
-echo " Pasta gerada: /agrinho-sustentavel               "
-echo "=================================================="
